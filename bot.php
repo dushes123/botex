@@ -13,6 +13,57 @@ $token = 'большой ключ';
 //Получаем и декодируем уведомление
 $data = json_decode(file_get_contents('php://input'));
 
+
+$keyboard_menu = [
+  'one_time' => false,
+  'buttons' => [
+    [
+      [
+        'action' =>  
+        [
+          'type' => 'text',
+          'payload' => '{"button": "1"}',
+          'label' => 'Синяя кнопка',
+        ],
+        'color' => 'primary',
+      ],
+    ],
+    [
+      [
+        'action' =>  
+        [
+          'type' => 'text',
+          'payload' => '{"button": "2"}',
+          'label' => 'Никакая кнопка',
+        ],
+        'color' => 'default',
+      ],
+    ],
+    [
+      [
+        'action' =>  
+        [
+          'type' => 'text',
+          'payload' => '{"button": "3"}',
+          'label' => 'Красная кнопка',
+        ],
+        'color' => 'negative',
+      ],
+    ],
+    [
+      [
+        'action' =>  
+        [
+          'type' => 'text',
+          'payload' => '{"button": "3"}',
+          'label' => 'Зелёная кнопка',
+        ],
+        'color' => 'positive',
+      ],
+    ],
+  ],
+];
+
 //Проверяем, что находится в поле "type"
 switch ($data->type) {
     //Если это уведомление для подтверждения адреса сервера...
