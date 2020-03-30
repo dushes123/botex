@@ -90,7 +90,8 @@ switch ($data->type) {
 			  'message' => "{$user_name} - lol", 
 			  'peer_id' => $peer_id, 
 			  'access_token' => $token, 
-			  'v' => '5.80'
+			  'v' => '5.80',
+			  'keyboard' => json_encode($keyboard_menu)
 			 );
         
 
